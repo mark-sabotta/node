@@ -139,7 +139,8 @@ describe("get", function () {
     expect(user.firstName).toEqual("U1F");
     expect(user.lastName).toEqual("U1L");
     expect(user.email).toEqual("u1@email.com");
-    expect(!user.isAdmin).toBeTruthy;
+    expect(user.isAdmin).toBeFalsy();
+    expect(user.applications.length).toEqual(1);
   });
 
   test("not found if no such user", async function () {
